@@ -5,7 +5,7 @@ message Request {
   required RpcEnum.RpcDirection direction = 1;
   optional int64 rpc_id = 3;
   repeated Requests requests = 4;
-  optional Unknown6 unknown6 = 6;
+  optional Signature signature = 6;
   optional fixed64 latitude = 7;
   optional fixed64 longitude = 8;
   optional fixed64 altitude = 9;
@@ -32,32 +32,15 @@ message Request {
     required string unknown4 = 1;
   }
 
-  message Unknown6 {
-    required int32 unknown1 = 1;
-    required Unknown2 unknown2 = 2;
-
-    message Unknown2 {
-      required bytes unknown1 = 1;
-    }
-  }
 }
 
 message Response {
   required RpcEnum.RpcDirection direction = 1;
   optional int64 unknown2 = 2;
   optional string api_url = 3;
-  required Unknown6 unknown6 = 6;
+  required Signature signature = 6;
   optional AuthTicket auth_ticket = 7;
   repeated bytes responses = 100;
-
-  message Unknown6 {
-    required int32 unknown1 = 1;
-    required Unknown2 unknown2 = 2;
-
-    message Unknown2 {
-      required bytes unknown1 = 1;
-    }
-  }
 
   message Unknown7 {
     optional bytes unknown71 = 1;
@@ -70,4 +53,93 @@ message AuthTicket {
   optional bytes start = 1;
   optional uint64 expire_timestamp_ms = 2;
   optional bytes end = 3;
+}
+
+message Signature {
+
+    message LocationFix {
+        // On iOS there are some LocationFixes with unk26=1 and everything else empty
+        required string provider = 1; // "network", "gps", "fused", possibly others
+        required uint64 timestamp_since_start = 2; // in ms
+        required double latitude = 13;
+        required double longitude = 14;
+        required double unk20 = 20; // sample 0xbf800000 (iOS only, possibly horizontal accuracy)
+        required double altitude = 21;   //  sample 0x41aded91 -> 21.74
+        required double unk22 = 22; // sample 0x40800000 (iOS only, possibly vertical accuracy)
+        required uint64 unk26 = 26; // Always 3 (possibly GPS status or number of satellites)
+        required uint64 unk28 = 28; // Always 1
+    }
+
+  // Only needed for iOS
+    message Unknown5 {
+        required uint64 unk1 = 1;
+        required bytes unk2 = 2;
+        repeated fixed32 unk3 = 3;
+        repeated fixed32 unk4 = 4;
+        repeated fixed32 unk5 = 5;
+        required bytes unk6 = 6;
+        required bytes unk7 = 7;
+        required bytes unk8 = 8;
+    }
+
+    message SensorInfo {
+        required uint64 timestamp_snapshot = 1; // in ms
+        required double magnetometer_x = 3;
+        required double magnetometer_y = 4;
+        required double magnetometer_z = 5;
+        required double angle_normalized_x = 6;
+        required double angle_normalized_y = 7;
+        required double angle_normalized_z = 8;
+        required double accel_raw_x = 10;
+        required double accel_raw_y = 11;
+        required double accel_raw_z = 12;
+        required double gyroscope_raw_x = 13;
+        required double gyroscope_raw_y = 14;
+        required double gyroscope_raw_z = 15;
+        required double accel_normalized_x = 16;
+        required double accel_normalized_y = 17;
+        required double accel_normalized_z = 18;
+        required uint64 accelerometer_axes = 19; // Always 3
+    }
+
+    message DeviceInfo {
+        required string device_id = 1;
+        required string android_board_name = 2;
+        required string android_bootloader = 3;
+        required string device_brand = 4;    // product.brand
+        required string device_model = 5;    // product.device
+        required string device_model_identifier = 6; // Android only, build.display.id
+        required string device_comms_model = 7;  // boot.hardware
+        required string hardware_manufacturer = 8; // product.manufacturer
+        required string hardware_model = 9;  // product.model
+        required string firmware_brand = 10; // On iOS: "iPhone OS", product.name
+        required string firmware_tags = 12; // Android only, build.tags
+        required string firmware_type = 13; // On iOS instead: iOS version; // build.type
+        required string firmware_fingerprint = 14; // Android only, build.fingerprint
+    }
+
+    // iOS only
+    message Unknown9 {
+        // all of these had 1 as their value
+        required uint64 unk3 = 3;
+        required uint64 unk5 = 5;
+        required uint64 unk6 = 6;
+    }
+
+    required uint64 timestamp_since_start = 2; // in ms
+    repeated LocationFix location_fix = 4;
+    required Unknown5 unk5 = 5;
+    required SensorInfo sensor_info = 7;
+    required DeviceInfo device_info = 8;
+    required Unknown9 unk9 = 9; // iOS only
+    required uint32 unk10 = 10; //Location1 hashed based on the auth_token - xxHash32
+    required uint32 unk20 = 20; //Location2 hashed based on the auth_token - xxHash32
+    required bytes unk22 = 22; // replay check - Changes every 5 minutes or so. Generation unknown but pointed to by 0001B8614
+    required uint64 timestamp = 23; // epoch timestamp in ms
+    repeated uint64 request_hash = 24; // hashes of each request message in a hashArray - xxhash64
+
+    // Addresses for the corresponding hash functions:
+    //    xxHash32              00054D28
+    //    xxhash64              000546C8 - Feeds into 00053D40
+
 }

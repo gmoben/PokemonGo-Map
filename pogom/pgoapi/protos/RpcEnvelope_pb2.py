@@ -7,6 +7,7 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -18,7 +19,7 @@ import RpcEnum_pb2
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='RpcEnvelope.proto',
   package='',
-  serialized_pb=_b('\n\x11RpcEnvelope.proto\x1a\rRpcEnum.proto\"\xd8\x04\n\x07Request\x12(\n\tdirection\x18\x01 \x02(\x0e\x32\x15.RpcEnum.RpcDirection\x12\x0e\n\x06rpc_id\x18\x03 \x01(\x03\x12#\n\x08requests\x18\x04 \x03(\x0b\x32\x11.Request.Requests\x12#\n\x08unknown6\x18\x06 \x01(\x0b\x32\x11.Request.Unknown6\x12\x10\n\x08latitude\x18\x07 \x01(\x06\x12\x11\n\tlongitude\x18\x08 \x01(\x06\x12\x10\n\x08\x61ltitude\x18\t \x01(\x06\x12\x1f\n\x04\x61uth\x18\n \x01(\x0b\x32\x11.Request.AuthInfo\x12 \n\x0b\x61uth_ticket\x18\x0b \x01(\x0b\x32\x0b.AuthTicket\x12\x11\n\tunknown12\x18\x0c \x01(\x03\x1a\x44\n\x08Requests\x12$\n\x04type\x18\x01 \x02(\x0e\x32\x16.RpcEnum.RequestMethod\x12\x12\n\nparameters\x18\x02 \x01(\x0c\x1an\n\x08\x41uthInfo\x12\x10\n\x08provider\x18\x01 \x02(\t\x12$\n\x05token\x18\x02 \x02(\x0b\x32\x15.Request.AuthInfo.JWT\x1a*\n\x03JWT\x12\x10\n\x08\x63ontents\x18\x01 \x02(\t\x12\x11\n\tunknown13\x18\x02 \x02(\x05\x1a\x1c\n\x08Unknown3\x12\x10\n\x08unknown4\x18\x01 \x02(\t\x1ah\n\x08Unknown6\x12\x10\n\x08unknown1\x18\x01 \x02(\x05\x12,\n\x08unknown2\x18\x02 \x02(\x0b\x32\x1a.Request.Unknown6.Unknown2\x1a\x1c\n\x08Unknown2\x12\x10\n\x08unknown1\x18\x01 \x02(\x0c\"\xe2\x02\n\x08Response\x12(\n\tdirection\x18\x01 \x02(\x0e\x32\x15.RpcEnum.RpcDirection\x12\x10\n\x08unknown2\x18\x02 \x01(\x03\x12\x0f\n\x07\x61pi_url\x18\x03 \x01(\t\x12$\n\x08unknown6\x18\x06 \x02(\x0b\x32\x12.Response.Unknown6\x12 \n\x0b\x61uth_ticket\x18\x07 \x01(\x0b\x32\x0b.AuthTicket\x12\x11\n\tresponses\x18\x64 \x03(\x0c\x1ai\n\x08Unknown6\x12\x10\n\x08unknown1\x18\x01 \x02(\x05\x12-\n\x08unknown2\x18\x02 \x02(\x0b\x32\x1b.Response.Unknown6.Unknown2\x1a\x1c\n\x08Unknown2\x12\x10\n\x08unknown1\x18\x01 \x02(\x0c\x1a\x43\n\x08Unknown7\x12\x11\n\tunknown71\x18\x01 \x01(\x0c\x12\x11\n\tunknown72\x18\x02 \x01(\x03\x12\x11\n\tunknown73\x18\x03 \x01(\x0c\"E\n\nAuthTicket\x12\r\n\x05start\x18\x01 \x01(\x0c\x12\x1b\n\x13\x65xpire_timestamp_ms\x18\x02 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x03 \x01(\x0c')
+  serialized_pb=_b('\n\x11RpcEnvelope.proto\x1a\rRpcEnum.proto\"\xe8\x03\n\x07Request\x12(\n\tdirection\x18\x01 \x02(\x0e\x32\x15.RpcEnum.RpcDirection\x12\x0e\n\x06rpc_id\x18\x03 \x01(\x03\x12#\n\x08requests\x18\x04 \x03(\x0b\x32\x11.Request.Requests\x12\x1d\n\tsignature\x18\x06 \x01(\x0b\x32\n.Signature\x12\x10\n\x08latitude\x18\x07 \x01(\x06\x12\x11\n\tlongitude\x18\x08 \x01(\x06\x12\x10\n\x08\x61ltitude\x18\t \x01(\x06\x12\x1f\n\x04\x61uth\x18\n \x01(\x0b\x32\x11.Request.AuthInfo\x12 \n\x0b\x61uth_ticket\x18\x0b \x01(\x0b\x32\x0b.AuthTicket\x12\x11\n\tunknown12\x18\x0c \x01(\x03\x1a\x44\n\x08Requests\x12$\n\x04type\x18\x01 \x02(\x0e\x32\x16.RpcEnum.RequestMethod\x12\x12\n\nparameters\x18\x02 \x01(\x0c\x1an\n\x08\x41uthInfo\x12\x10\n\x08provider\x18\x01 \x02(\t\x12$\n\x05token\x18\x02 \x02(\x0b\x32\x15.Request.AuthInfo.JWT\x1a*\n\x03JWT\x12\x10\n\x08\x63ontents\x18\x01 \x02(\t\x12\x11\n\tunknown13\x18\x02 \x02(\x05\x1a\x1c\n\x08Unknown3\x12\x10\n\x08unknown4\x18\x01 \x02(\t\"\xf0\x01\n\x08Response\x12(\n\tdirection\x18\x01 \x02(\x0e\x32\x15.RpcEnum.RpcDirection\x12\x10\n\x08unknown2\x18\x02 \x01(\x03\x12\x0f\n\x07\x61pi_url\x18\x03 \x01(\t\x12\x1d\n\tsignature\x18\x06 \x02(\x0b\x32\n.Signature\x12 \n\x0b\x61uth_ticket\x18\x07 \x01(\x0b\x32\x0b.AuthTicket\x12\x11\n\tresponses\x18\x64 \x03(\x0c\x1a\x43\n\x08Unknown7\x12\x11\n\tunknown71\x18\x01 \x01(\x0c\x12\x11\n\tunknown72\x18\x02 \x01(\x03\x12\x11\n\tunknown73\x18\x03 \x01(\x0c\"E\n\nAuthTicket\x12\r\n\x05start\x18\x01 \x01(\x0c\x12\x1b\n\x13\x65xpire_timestamp_ms\x18\x02 \x01(\x04\x12\x0b\n\x03\x65nd\x18\x03 \x01(\x0c\"\xd1\x0b\n\tSignature\x12\x1d\n\x15timestamp_since_start\x18\x02 \x02(\x04\x12,\n\x0clocation_fix\x18\x04 \x03(\x0b\x32\x16.Signature.LocationFix\x12!\n\x04unk5\x18\x05 \x02(\x0b\x32\x13.Signature.Unknown5\x12*\n\x0bsensor_info\x18\x07 \x02(\x0b\x32\x15.Signature.SensorInfo\x12*\n\x0b\x64\x65vice_info\x18\x08 \x02(\x0b\x32\x15.Signature.DeviceInfo\x12!\n\x04unk9\x18\t \x02(\x0b\x32\x13.Signature.Unknown9\x12\r\n\x05unk10\x18\n \x02(\r\x12\r\n\x05unk20\x18\x14 \x02(\r\x12\r\n\x05unk22\x18\x16 \x02(\x0c\x12\x11\n\ttimestamp\x18\x17 \x02(\x04\x12\x14\n\x0crequest_hash\x18\x18 \x03(\x04\x1a\xb1\x01\n\x0bLocationFix\x12\x10\n\x08provider\x18\x01 \x02(\t\x12\x1d\n\x15timestamp_since_start\x18\x02 \x02(\x04\x12\x10\n\x08latitude\x18\r \x02(\x01\x12\x11\n\tlongitude\x18\x0e \x02(\x01\x12\r\n\x05unk20\x18\x14 \x02(\x01\x12\x10\n\x08\x61ltitude\x18\x15 \x02(\x01\x12\r\n\x05unk22\x18\x16 \x02(\x01\x12\r\n\x05unk26\x18\x1a \x02(\x04\x12\r\n\x05unk28\x18\x1c \x02(\x04\x1az\n\x08Unknown5\x12\x0c\n\x04unk1\x18\x01 \x02(\x04\x12\x0c\n\x04unk2\x18\x02 \x02(\x0c\x12\x0c\n\x04unk3\x18\x03 \x03(\x07\x12\x0c\n\x04unk4\x18\x04 \x03(\x07\x12\x0c\n\x04unk5\x18\x05 \x03(\x07\x12\x0c\n\x04unk6\x18\x06 \x02(\x0c\x12\x0c\n\x04unk7\x18\x07 \x02(\x0c\x12\x0c\n\x04unk8\x18\x08 \x02(\x0c\x1a\xbe\x03\n\nSensorInfo\x12\x1a\n\x12timestamp_snapshot\x18\x01 \x02(\x04\x12\x16\n\x0emagnetometer_x\x18\x03 \x02(\x01\x12\x16\n\x0emagnetometer_y\x18\x04 \x02(\x01\x12\x16\n\x0emagnetometer_z\x18\x05 \x02(\x01\x12\x1a\n\x12\x61ngle_normalized_x\x18\x06 \x02(\x01\x12\x1a\n\x12\x61ngle_normalized_y\x18\x07 \x02(\x01\x12\x1a\n\x12\x61ngle_normalized_z\x18\x08 \x02(\x01\x12\x13\n\x0b\x61\x63\x63\x65l_raw_x\x18\n \x02(\x01\x12\x13\n\x0b\x61\x63\x63\x65l_raw_y\x18\x0b \x02(\x01\x12\x13\n\x0b\x61\x63\x63\x65l_raw_z\x18\x0c \x02(\x01\x12\x17\n\x0fgyroscope_raw_x\x18\r \x02(\x01\x12\x17\n\x0fgyroscope_raw_y\x18\x0e \x02(\x01\x12\x17\n\x0fgyroscope_raw_z\x18\x0f \x02(\x01\x12\x1a\n\x12\x61\x63\x63\x65l_normalized_x\x18\x10 \x02(\x01\x12\x1a\n\x12\x61\x63\x63\x65l_normalized_y\x18\x11 \x02(\x01\x12\x1a\n\x12\x61\x63\x63\x65l_normalized_z\x18\x12 \x02(\x01\x12\x1a\n\x12\x61\x63\x63\x65lerometer_axes\x18\x13 \x02(\x04\x1a\xdb\x02\n\nDeviceInfo\x12\x11\n\tdevice_id\x18\x01 \x02(\t\x12\x1a\n\x12\x61ndroid_board_name\x18\x02 \x02(\t\x12\x1a\n\x12\x61ndroid_bootloader\x18\x03 \x02(\t\x12\x14\n\x0c\x64\x65vice_brand\x18\x04 \x02(\t\x12\x14\n\x0c\x64\x65vice_model\x18\x05 \x02(\t\x12\x1f\n\x17\x64\x65vice_model_identifier\x18\x06 \x02(\t\x12\x1a\n\x12\x64\x65vice_comms_model\x18\x07 \x02(\t\x12\x1d\n\x15hardware_manufacturer\x18\x08 \x02(\t\x12\x16\n\x0ehardware_model\x18\t \x02(\t\x12\x16\n\x0e\x66irmware_brand\x18\n \x02(\t\x12\x15\n\rfirmware_tags\x18\x0c \x02(\t\x12\x15\n\rfirmware_type\x18\r \x02(\t\x12\x1c\n\x14\x66irmware_fingerprint\x18\x0e \x02(\t\x1a\x34\n\x08Unknown9\x12\x0c\n\x04unk3\x18\x03 \x02(\x04\x12\x0c\n\x04unk5\x18\x05 \x02(\x04\x12\x0c\n\x04unk6\x18\x06 \x02(\x04')
   ,
   dependencies=[RpcEnum_pb2.DESCRIPTOR,])
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -58,8 +59,8 @@ _REQUEST_REQUESTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=321,
-  serialized_end=389,
+  serialized_start=315,
+  serialized_end=383,
 )
 
 _REQUEST_AUTHINFO_JWT = _descriptor.Descriptor(
@@ -94,8 +95,8 @@ _REQUEST_AUTHINFO_JWT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=459,
-  serialized_end=501,
+  serialized_start=453,
+  serialized_end=495,
 )
 
 _REQUEST_AUTHINFO = _descriptor.Descriptor(
@@ -130,8 +131,8 @@ _REQUEST_AUTHINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=391,
-  serialized_end=501,
+  serialized_start=385,
+  serialized_end=495,
 )
 
 _REQUEST_UNKNOWN3 = _descriptor.Descriptor(
@@ -159,73 +160,8 @@ _REQUEST_UNKNOWN3 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=503,
-  serialized_end=531,
-)
-
-_REQUEST_UNKNOWN6_UNKNOWN2 = _descriptor.Descriptor(
-  name='Unknown2',
-  full_name='Request.Unknown6.Unknown2',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='unknown1', full_name='Request.Unknown6.Unknown2.unknown1', index=0,
-      number=1, type=12, cpp_type=9, label=2,
-      has_default_value=False, default_value=_b(""),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=609,
-  serialized_end=637,
-)
-
-_REQUEST_UNKNOWN6 = _descriptor.Descriptor(
-  name='Unknown6',
-  full_name='Request.Unknown6',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='unknown1', full_name='Request.Unknown6.unknown1', index=0,
-      number=1, type=5, cpp_type=1, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='unknown2', full_name='Request.Unknown6.unknown2', index=1,
-      number=2, type=11, cpp_type=10, label=2,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[_REQUEST_UNKNOWN6_UNKNOWN2, ],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=533,
-  serialized_end=637,
+  serialized_start=497,
+  serialized_end=525,
 )
 
 _REQUEST = _descriptor.Descriptor(
@@ -257,7 +193,7 @@ _REQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='unknown6', full_name='Request.unknown6', index=3,
+      name='signature', full_name='Request.signature', index=3,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -308,7 +244,7 @@ _REQUEST = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_REQUEST_REQUESTS, _REQUEST_AUTHINFO, _REQUEST_UNKNOWN3, _REQUEST_UNKNOWN6, ],
+  nested_types=[_REQUEST_REQUESTS, _REQUEST_AUTHINFO, _REQUEST_UNKNOWN3, ],
   enum_types=[
   ],
   options=None,
@@ -317,74 +253,9 @@ _REQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=37,
-  serialized_end=637,
+  serialized_end=525,
 )
 
-
-_RESPONSE_UNKNOWN6_UNKNOWN2 = _descriptor.Descriptor(
-  name='Unknown2',
-  full_name='Response.Unknown6.Unknown2',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='unknown1', full_name='Response.Unknown6.Unknown2.unknown1', index=0,
-      number=1, type=12, cpp_type=9, label=2,
-      has_default_value=False, default_value=_b(""),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=609,
-  serialized_end=637,
-)
-
-_RESPONSE_UNKNOWN6 = _descriptor.Descriptor(
-  name='Unknown6',
-  full_name='Response.Unknown6',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='unknown1', full_name='Response.Unknown6.unknown1', index=0,
-      number=1, type=5, cpp_type=1, label=2,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='unknown2', full_name='Response.Unknown6.unknown2', index=1,
-      number=2, type=11, cpp_type=10, label=2,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-  ],
-  extensions=[
-  ],
-  nested_types=[_RESPONSE_UNKNOWN6_UNKNOWN2, ],
-  enum_types=[
-  ],
-  options=None,
-  is_extendable=False,
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=820,
-  serialized_end=925,
-)
 
 _RESPONSE_UNKNOWN7 = _descriptor.Descriptor(
   name='Unknown7',
@@ -425,8 +296,8 @@ _RESPONSE_UNKNOWN7 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=927,
-  serialized_end=994,
+  serialized_start=701,
+  serialized_end=768,
 )
 
 _RESPONSE = _descriptor.Descriptor(
@@ -458,7 +329,7 @@ _RESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='unknown6', full_name='Response.unknown6', index=3,
+      name='signature', full_name='Response.signature', index=3,
       number=6, type=11, cpp_type=10, label=2,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -481,7 +352,7 @@ _RESPONSE = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_RESPONSE_UNKNOWN6, _RESPONSE_UNKNOWN7, ],
+  nested_types=[_RESPONSE_UNKNOWN7, ],
   enum_types=[
   ],
   options=None,
@@ -489,8 +360,8 @@ _RESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=640,
-  serialized_end=994,
+  serialized_start=528,
+  serialized_end=768,
 )
 
 
@@ -533,8 +404,568 @@ _AUTHTICKET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=996,
-  serialized_end=1065,
+  serialized_start=770,
+  serialized_end=839,
+)
+
+
+_SIGNATURE_LOCATIONFIX = _descriptor.Descriptor(
+  name='LocationFix',
+  full_name='Signature.LocationFix',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='provider', full_name='Signature.LocationFix.provider', index=0,
+      number=1, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='timestamp_since_start', full_name='Signature.LocationFix.timestamp_since_start', index=1,
+      number=2, type=4, cpp_type=4, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='latitude', full_name='Signature.LocationFix.latitude', index=2,
+      number=13, type=1, cpp_type=5, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='longitude', full_name='Signature.LocationFix.longitude', index=3,
+      number=14, type=1, cpp_type=5, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='unk20', full_name='Signature.LocationFix.unk20', index=4,
+      number=20, type=1, cpp_type=5, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='altitude', full_name='Signature.LocationFix.altitude', index=5,
+      number=21, type=1, cpp_type=5, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='unk22', full_name='Signature.LocationFix.unk22', index=6,
+      number=22, type=1, cpp_type=5, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='unk26', full_name='Signature.LocationFix.unk26', index=7,
+      number=26, type=4, cpp_type=4, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='unk28', full_name='Signature.LocationFix.unk28', index=8,
+      number=28, type=4, cpp_type=4, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1177,
+  serialized_end=1354,
+)
+
+_SIGNATURE_UNKNOWN5 = _descriptor.Descriptor(
+  name='Unknown5',
+  full_name='Signature.Unknown5',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='unk1', full_name='Signature.Unknown5.unk1', index=0,
+      number=1, type=4, cpp_type=4, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='unk2', full_name='Signature.Unknown5.unk2', index=1,
+      number=2, type=12, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='unk3', full_name='Signature.Unknown5.unk3', index=2,
+      number=3, type=7, cpp_type=3, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='unk4', full_name='Signature.Unknown5.unk4', index=3,
+      number=4, type=7, cpp_type=3, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='unk5', full_name='Signature.Unknown5.unk5', index=4,
+      number=5, type=7, cpp_type=3, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='unk6', full_name='Signature.Unknown5.unk6', index=5,
+      number=6, type=12, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='unk7', full_name='Signature.Unknown5.unk7', index=6,
+      number=7, type=12, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='unk8', full_name='Signature.Unknown5.unk8', index=7,
+      number=8, type=12, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1356,
+  serialized_end=1478,
+)
+
+_SIGNATURE_SENSORINFO = _descriptor.Descriptor(
+  name='SensorInfo',
+  full_name='Signature.SensorInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='timestamp_snapshot', full_name='Signature.SensorInfo.timestamp_snapshot', index=0,
+      number=1, type=4, cpp_type=4, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='magnetometer_x', full_name='Signature.SensorInfo.magnetometer_x', index=1,
+      number=3, type=1, cpp_type=5, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='magnetometer_y', full_name='Signature.SensorInfo.magnetometer_y', index=2,
+      number=4, type=1, cpp_type=5, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='magnetometer_z', full_name='Signature.SensorInfo.magnetometer_z', index=3,
+      number=5, type=1, cpp_type=5, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='angle_normalized_x', full_name='Signature.SensorInfo.angle_normalized_x', index=4,
+      number=6, type=1, cpp_type=5, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='angle_normalized_y', full_name='Signature.SensorInfo.angle_normalized_y', index=5,
+      number=7, type=1, cpp_type=5, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='angle_normalized_z', full_name='Signature.SensorInfo.angle_normalized_z', index=6,
+      number=8, type=1, cpp_type=5, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='accel_raw_x', full_name='Signature.SensorInfo.accel_raw_x', index=7,
+      number=10, type=1, cpp_type=5, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='accel_raw_y', full_name='Signature.SensorInfo.accel_raw_y', index=8,
+      number=11, type=1, cpp_type=5, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='accel_raw_z', full_name='Signature.SensorInfo.accel_raw_z', index=9,
+      number=12, type=1, cpp_type=5, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='gyroscope_raw_x', full_name='Signature.SensorInfo.gyroscope_raw_x', index=10,
+      number=13, type=1, cpp_type=5, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='gyroscope_raw_y', full_name='Signature.SensorInfo.gyroscope_raw_y', index=11,
+      number=14, type=1, cpp_type=5, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='gyroscope_raw_z', full_name='Signature.SensorInfo.gyroscope_raw_z', index=12,
+      number=15, type=1, cpp_type=5, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='accel_normalized_x', full_name='Signature.SensorInfo.accel_normalized_x', index=13,
+      number=16, type=1, cpp_type=5, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='accel_normalized_y', full_name='Signature.SensorInfo.accel_normalized_y', index=14,
+      number=17, type=1, cpp_type=5, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='accel_normalized_z', full_name='Signature.SensorInfo.accel_normalized_z', index=15,
+      number=18, type=1, cpp_type=5, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='accelerometer_axes', full_name='Signature.SensorInfo.accelerometer_axes', index=16,
+      number=19, type=4, cpp_type=4, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1481,
+  serialized_end=1927,
+)
+
+_SIGNATURE_DEVICEINFO = _descriptor.Descriptor(
+  name='DeviceInfo',
+  full_name='Signature.DeviceInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='device_id', full_name='Signature.DeviceInfo.device_id', index=0,
+      number=1, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='android_board_name', full_name='Signature.DeviceInfo.android_board_name', index=1,
+      number=2, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='android_bootloader', full_name='Signature.DeviceInfo.android_bootloader', index=2,
+      number=3, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='device_brand', full_name='Signature.DeviceInfo.device_brand', index=3,
+      number=4, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='device_model', full_name='Signature.DeviceInfo.device_model', index=4,
+      number=5, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='device_model_identifier', full_name='Signature.DeviceInfo.device_model_identifier', index=5,
+      number=6, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='device_comms_model', full_name='Signature.DeviceInfo.device_comms_model', index=6,
+      number=7, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='hardware_manufacturer', full_name='Signature.DeviceInfo.hardware_manufacturer', index=7,
+      number=8, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='hardware_model', full_name='Signature.DeviceInfo.hardware_model', index=8,
+      number=9, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='firmware_brand', full_name='Signature.DeviceInfo.firmware_brand', index=9,
+      number=10, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='firmware_tags', full_name='Signature.DeviceInfo.firmware_tags', index=10,
+      number=12, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='firmware_type', full_name='Signature.DeviceInfo.firmware_type', index=11,
+      number=13, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='firmware_fingerprint', full_name='Signature.DeviceInfo.firmware_fingerprint', index=12,
+      number=14, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1930,
+  serialized_end=2277,
+)
+
+_SIGNATURE_UNKNOWN9 = _descriptor.Descriptor(
+  name='Unknown9',
+  full_name='Signature.Unknown9',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='unk3', full_name='Signature.Unknown9.unk3', index=0,
+      number=3, type=4, cpp_type=4, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='unk5', full_name='Signature.Unknown9.unk5', index=1,
+      number=5, type=4, cpp_type=4, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='unk6', full_name='Signature.Unknown9.unk6', index=2,
+      number=6, type=4, cpp_type=4, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2279,
+  serialized_end=2331,
+)
+
+_SIGNATURE = _descriptor.Descriptor(
+  name='Signature',
+  full_name='Signature',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='timestamp_since_start', full_name='Signature.timestamp_since_start', index=0,
+      number=2, type=4, cpp_type=4, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='location_fix', full_name='Signature.location_fix', index=1,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='unk5', full_name='Signature.unk5', index=2,
+      number=5, type=11, cpp_type=10, label=2,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='sensor_info', full_name='Signature.sensor_info', index=3,
+      number=7, type=11, cpp_type=10, label=2,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='device_info', full_name='Signature.device_info', index=4,
+      number=8, type=11, cpp_type=10, label=2,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='unk9', full_name='Signature.unk9', index=5,
+      number=9, type=11, cpp_type=10, label=2,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='unk10', full_name='Signature.unk10', index=6,
+      number=10, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='unk20', full_name='Signature.unk20', index=7,
+      number=20, type=13, cpp_type=3, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='unk22', full_name='Signature.unk22', index=8,
+      number=22, type=12, cpp_type=9, label=2,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='timestamp', full_name='Signature.timestamp', index=9,
+      number=23, type=4, cpp_type=4, label=2,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='request_hash', full_name='Signature.request_hash', index=10,
+      number=24, type=4, cpp_type=4, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[_SIGNATURE_LOCATIONFIX, _SIGNATURE_UNKNOWN5, _SIGNATURE_SENSORINFO, _SIGNATURE_DEVICEINFO, _SIGNATURE_UNKNOWN9, ],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=842,
+  serialized_end=2331,
 )
 
 _REQUEST_REQUESTS.fields_by_name['type'].enum_type = RpcEnum_pb2._REQUESTMETHOD
@@ -543,24 +974,29 @@ _REQUEST_AUTHINFO_JWT.containing_type = _REQUEST_AUTHINFO
 _REQUEST_AUTHINFO.fields_by_name['token'].message_type = _REQUEST_AUTHINFO_JWT
 _REQUEST_AUTHINFO.containing_type = _REQUEST
 _REQUEST_UNKNOWN3.containing_type = _REQUEST
-_REQUEST_UNKNOWN6_UNKNOWN2.containing_type = _REQUEST_UNKNOWN6
-_REQUEST_UNKNOWN6.fields_by_name['unknown2'].message_type = _REQUEST_UNKNOWN6_UNKNOWN2
-_REQUEST_UNKNOWN6.containing_type = _REQUEST
 _REQUEST.fields_by_name['direction'].enum_type = RpcEnum_pb2._RPCDIRECTION
 _REQUEST.fields_by_name['requests'].message_type = _REQUEST_REQUESTS
-_REQUEST.fields_by_name['unknown6'].message_type = _REQUEST_UNKNOWN6
+_REQUEST.fields_by_name['signature'].message_type = _SIGNATURE
 _REQUEST.fields_by_name['auth'].message_type = _REQUEST_AUTHINFO
 _REQUEST.fields_by_name['auth_ticket'].message_type = _AUTHTICKET
-_RESPONSE_UNKNOWN6_UNKNOWN2.containing_type = _RESPONSE_UNKNOWN6
-_RESPONSE_UNKNOWN6.fields_by_name['unknown2'].message_type = _RESPONSE_UNKNOWN6_UNKNOWN2
-_RESPONSE_UNKNOWN6.containing_type = _RESPONSE
 _RESPONSE_UNKNOWN7.containing_type = _RESPONSE
 _RESPONSE.fields_by_name['direction'].enum_type = RpcEnum_pb2._RPCDIRECTION
-_RESPONSE.fields_by_name['unknown6'].message_type = _RESPONSE_UNKNOWN6
+_RESPONSE.fields_by_name['signature'].message_type = _SIGNATURE
 _RESPONSE.fields_by_name['auth_ticket'].message_type = _AUTHTICKET
+_SIGNATURE_LOCATIONFIX.containing_type = _SIGNATURE
+_SIGNATURE_UNKNOWN5.containing_type = _SIGNATURE
+_SIGNATURE_SENSORINFO.containing_type = _SIGNATURE
+_SIGNATURE_DEVICEINFO.containing_type = _SIGNATURE
+_SIGNATURE_UNKNOWN9.containing_type = _SIGNATURE
+_SIGNATURE.fields_by_name['location_fix'].message_type = _SIGNATURE_LOCATIONFIX
+_SIGNATURE.fields_by_name['unk5'].message_type = _SIGNATURE_UNKNOWN5
+_SIGNATURE.fields_by_name['sensor_info'].message_type = _SIGNATURE_SENSORINFO
+_SIGNATURE.fields_by_name['device_info'].message_type = _SIGNATURE_DEVICEINFO
+_SIGNATURE.fields_by_name['unk9'].message_type = _SIGNATURE_UNKNOWN9
 DESCRIPTOR.message_types_by_name['Request'] = _REQUEST
 DESCRIPTOR.message_types_by_name['Response'] = _RESPONSE
 DESCRIPTOR.message_types_by_name['AuthTicket'] = _AUTHTICKET
+DESCRIPTOR.message_types_by_name['Signature'] = _SIGNATURE
 
 Request = _reflection.GeneratedProtocolMessageType('Request', (_message.Message,), dict(
 
@@ -591,20 +1027,6 @@ Request = _reflection.GeneratedProtocolMessageType('Request', (_message.Message,
     # @@protoc_insertion_point(class_scope:Request.Unknown3)
     ))
   ,
-
-  Unknown6 = _reflection.GeneratedProtocolMessageType('Unknown6', (_message.Message,), dict(
-
-    Unknown2 = _reflection.GeneratedProtocolMessageType('Unknown2', (_message.Message,), dict(
-      DESCRIPTOR = _REQUEST_UNKNOWN6_UNKNOWN2,
-      __module__ = 'RpcEnvelope_pb2'
-      # @@protoc_insertion_point(class_scope:Request.Unknown6.Unknown2)
-      ))
-    ,
-    DESCRIPTOR = _REQUEST_UNKNOWN6,
-    __module__ = 'RpcEnvelope_pb2'
-    # @@protoc_insertion_point(class_scope:Request.Unknown6)
-    ))
-  ,
   DESCRIPTOR = _REQUEST,
   __module__ = 'RpcEnvelope_pb2'
   # @@protoc_insertion_point(class_scope:Request)
@@ -614,24 +1036,8 @@ _sym_db.RegisterMessage(Request.Requests)
 _sym_db.RegisterMessage(Request.AuthInfo)
 _sym_db.RegisterMessage(Request.AuthInfo.JWT)
 _sym_db.RegisterMessage(Request.Unknown3)
-_sym_db.RegisterMessage(Request.Unknown6)
-_sym_db.RegisterMessage(Request.Unknown6.Unknown2)
 
 Response = _reflection.GeneratedProtocolMessageType('Response', (_message.Message,), dict(
-
-  Unknown6 = _reflection.GeneratedProtocolMessageType('Unknown6', (_message.Message,), dict(
-
-    Unknown2 = _reflection.GeneratedProtocolMessageType('Unknown2', (_message.Message,), dict(
-      DESCRIPTOR = _RESPONSE_UNKNOWN6_UNKNOWN2,
-      __module__ = 'RpcEnvelope_pb2'
-      # @@protoc_insertion_point(class_scope:Response.Unknown6.Unknown2)
-      ))
-    ,
-    DESCRIPTOR = _RESPONSE_UNKNOWN6,
-    __module__ = 'RpcEnvelope_pb2'
-    # @@protoc_insertion_point(class_scope:Response.Unknown6)
-    ))
-  ,
 
   Unknown7 = _reflection.GeneratedProtocolMessageType('Unknown7', (_message.Message,), dict(
     DESCRIPTOR = _RESPONSE_UNKNOWN7,
@@ -644,8 +1050,6 @@ Response = _reflection.GeneratedProtocolMessageType('Response', (_message.Messag
   # @@protoc_insertion_point(class_scope:Response)
   ))
 _sym_db.RegisterMessage(Response)
-_sym_db.RegisterMessage(Response.Unknown6)
-_sym_db.RegisterMessage(Response.Unknown6.Unknown2)
 _sym_db.RegisterMessage(Response.Unknown7)
 
 AuthTicket = _reflection.GeneratedProtocolMessageType('AuthTicket', (_message.Message,), dict(
@@ -654,6 +1058,53 @@ AuthTicket = _reflection.GeneratedProtocolMessageType('AuthTicket', (_message.Me
   # @@protoc_insertion_point(class_scope:AuthTicket)
   ))
 _sym_db.RegisterMessage(AuthTicket)
+
+Signature = _reflection.GeneratedProtocolMessageType('Signature', (_message.Message,), dict(
+
+  LocationFix = _reflection.GeneratedProtocolMessageType('LocationFix', (_message.Message,), dict(
+    DESCRIPTOR = _SIGNATURE_LOCATIONFIX,
+    __module__ = 'RpcEnvelope_pb2'
+    # @@protoc_insertion_point(class_scope:Signature.LocationFix)
+    ))
+  ,
+
+  Unknown5 = _reflection.GeneratedProtocolMessageType('Unknown5', (_message.Message,), dict(
+    DESCRIPTOR = _SIGNATURE_UNKNOWN5,
+    __module__ = 'RpcEnvelope_pb2'
+    # @@protoc_insertion_point(class_scope:Signature.Unknown5)
+    ))
+  ,
+
+  SensorInfo = _reflection.GeneratedProtocolMessageType('SensorInfo', (_message.Message,), dict(
+    DESCRIPTOR = _SIGNATURE_SENSORINFO,
+    __module__ = 'RpcEnvelope_pb2'
+    # @@protoc_insertion_point(class_scope:Signature.SensorInfo)
+    ))
+  ,
+
+  DeviceInfo = _reflection.GeneratedProtocolMessageType('DeviceInfo', (_message.Message,), dict(
+    DESCRIPTOR = _SIGNATURE_DEVICEINFO,
+    __module__ = 'RpcEnvelope_pb2'
+    # @@protoc_insertion_point(class_scope:Signature.DeviceInfo)
+    ))
+  ,
+
+  Unknown9 = _reflection.GeneratedProtocolMessageType('Unknown9', (_message.Message,), dict(
+    DESCRIPTOR = _SIGNATURE_UNKNOWN9,
+    __module__ = 'RpcEnvelope_pb2'
+    # @@protoc_insertion_point(class_scope:Signature.Unknown9)
+    ))
+  ,
+  DESCRIPTOR = _SIGNATURE,
+  __module__ = 'RpcEnvelope_pb2'
+  # @@protoc_insertion_point(class_scope:Signature)
+  ))
+_sym_db.RegisterMessage(Signature)
+_sym_db.RegisterMessage(Signature.LocationFix)
+_sym_db.RegisterMessage(Signature.Unknown5)
+_sym_db.RegisterMessage(Signature.SensorInfo)
+_sym_db.RegisterMessage(Signature.DeviceInfo)
+_sym_db.RegisterMessage(Signature.Unknown9)
 
 
 # @@protoc_insertion_point(module_scope)
